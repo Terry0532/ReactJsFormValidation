@@ -15,6 +15,10 @@ const Register = () => {
 
   const [user, setUser] = useState("");
   const [validName, setValidName] = useState(false);
+  const [userFocus, setUserFocus] = useState(false);
+
+  const [pwd, setPwd] = useState("");
+  const [validPwd, setValidPwd] = useState(false);
   const [pwdFocus, setPwdFocus] = useState(false);
 
   const [matchPwd, setMatchPwd] = useState("");
@@ -29,7 +33,7 @@ const Register = () => {
   }, []);
 
   useEffect(() => {
-    const result = USER_REGEX.text(user);
+    const result = USER_REGEX.test(user);
     console.log(result);
     console.log(user);
     setValidName(result);
